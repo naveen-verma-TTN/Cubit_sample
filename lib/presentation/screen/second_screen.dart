@@ -20,6 +20,9 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
+    // int counterValue = context.read()<CounterCubit>().state.counterValue; // will not update for internet change
+    int counterValue = context.watch<CounterCubit>().state.counterValue;
+
     return Scaffold(
       backgroundColor: widget.color,
       appBar: AppBar(
@@ -27,34 +30,9 @@ class _SecondScreenState extends State<SecondScreen> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: BlocConsumer<CounterCubit, CounterState>(
-          builder: (context, state) {
-            if (state.counterValue < 0) {
-              return Text(
-                "NEGATIVE! ${state.counterValue}",
-                style: Theme.of(context).textTheme.headline4,
-              );
-            } else if (state.counterValue % 2 == 0) {
-              return Text(
-                "EVEN! ${state.counterValue}",
-                style: Theme.of(context).textTheme.headline4,
-              );
-            } else {
-              return Text(
-                "ODD! ${state.counterValue}",
-                style: Theme.of(context).textTheme.headline4,
-              );
-            }
-          },
-          listener: (context, state) {
-            if (state.wasIncremented == true) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Yay! Number was INCREMENTED")));
-            } else if (state.wasIncremented == false) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Yay! Number was DECREMENTED")));
-            }
-          },
+        child: Text(
+          "CounterValue: $counterValue",
+          style: Theme.of(context).textTheme.headline4,
         ),
       ),
     );

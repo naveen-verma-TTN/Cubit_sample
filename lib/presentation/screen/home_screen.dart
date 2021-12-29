@@ -1,7 +1,9 @@
 import 'package:bloc_sample/constants/internet_enum.dart';
 import 'package:bloc_sample/logic/cubit/counter_cubit.dart';
 import 'package:bloc_sample/logic/cubit/internet_cubit.dart';
+import 'package:bloc_sample/presentation/screen/second_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/src/provider.dart';
 
 /// Created by Naveen Verma on 22-12-2021
@@ -164,17 +166,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/second'
-                    // MaterialPageRoute(
-                    //   builder: (_) => BlocProvider.value(
-                    //     value: BlocProvider.of<CounterCubit>(context),
-                    //     child: const SecondScreen(
-                    //       title: "Second Screen",
-                    //       color: Colors.lightGreen,
-                    //     ),
-                    //   ),
-                    // ),
-                    );
+                // Navigator.of(context).pushNamed('/second'
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const SecondScreen(
+                      title: "Second Screen",
+                      color: Colors.lightGreen,
+                    ),
+                  ),
+                );
               },
               color: Colors.lightGreen,
               child: const Text("Go to Second Screen"),
