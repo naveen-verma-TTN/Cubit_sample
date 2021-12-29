@@ -1,6 +1,6 @@
-# bloc_sample
+# bloc & cubit sample
 
-A new Flutter project.
+Sample project for bloc & cubit
 
 ## Getting Started
 
