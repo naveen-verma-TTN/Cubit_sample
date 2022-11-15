@@ -1,6 +1,6 @@
 import 'package:bloc_sample/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/src/provider.dart';
 
 /// Created by Naveen Verma on 22-12-2021
 /// To The New

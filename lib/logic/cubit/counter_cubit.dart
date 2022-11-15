@@ -1,18 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:bloc_sample/constants/internet_enum.dart';
 import 'package:bloc_sample/logic/cubit/internet_cubit.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-/// Created by Naveen Verma on 21-12-2021
-/// To The New
-/// naveen.verma@tothenew.com
-
-import 'package:bloc/bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:meta/meta.dart';
 
 part 'counter_state.dart';
 
